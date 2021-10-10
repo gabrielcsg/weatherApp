@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 
 import { api } from 'src/config/api';
-import { AppError } from 'src/shared/AppError';
+import { AppError } from 'src/shared/appError';
 
-import { ResponseWeatherDTO } from './dto/ResponseWeatherDTO';
+import { CreateWeatherDTO } from './dto/createWeather.dto';
+import { ResponseWeatherDTO } from './dto/responseWeather.dto';
 import { Weather } from './entities/weather.entity';
-import { WeatherDTO } from './dto/WeatherDTO';
 
 @Injectable()
 export class WeatherService {
@@ -25,7 +25,7 @@ export class WeatherService {
       // Tratamento dos dados da resposta
       const data: ResponseWeatherDTO = response.data;
 
-      const weatherResult: WeatherDTO = {
+      const weatherResult: CreateWeatherDTO = {
         cityId: data.id,
         cityName: data.name,
         condition: data.weather[0].main,

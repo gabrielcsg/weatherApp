@@ -1,4 +1,4 @@
-export interface WeatherDTO {
+export interface CreateWeatherDTO {
   cityId: number;
   cityName: string;
   condition: string;
