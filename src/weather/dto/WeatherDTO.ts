@@ -1,8 +1,8 @@
 export interface WeatherDTO {
   cityId: number;
   cityName: string;
-  group: string;
-  groupDescription?: string;
+  condition: string;
+  conditionDescription: string;
   temp: number;
   tempMin: number;
   tempMax: number;
@@ -10,4 +10,5 @@ export interface WeatherDTO {
   feelsLike: number;
   humidity: number;
   clouds: number;
+  windSpeed: number;
 }

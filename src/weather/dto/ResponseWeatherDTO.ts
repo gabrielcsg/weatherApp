@@ -17,4 +17,7 @@ export interface ResponseWeatherDTO {
   };
   id: number;
   name: string;
+  wind: {
+    speed: number;
+  };
 }

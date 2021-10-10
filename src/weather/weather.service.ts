@@ -28,8 +28,8 @@ export class WeatherService {
       const weatherResult: WeatherDTO = {
         cityId: data.id,
         cityName: data.name,
-        group: data.weather[0].main,
-        groupDescription: data.weather[0].description,
+        condition: data.weather[0].main,
+        conditionDescription: data.weather[0].description,
         temp: data.main.temp,
         tempMin: data.main.temp_min,
         tempMax: data.main.temp_max,
@@ -37,12 +37,13 @@ export class WeatherService {
         feelsLike: data.main.feels_like,
         humidity: data.main.humidity,
         clouds: data.clouds.all,
+        windSpeed: data.wind.speed,
       };
 
       Object.assign(weather, weatherResult);
     } catch (error) {
       if (error.response?.data?.cod === '404')
-        throw new AppError('Cidade não encontrada');
+        throw new AppError('Cidade não encontrada', 404);
       throw new AppError('Erro no consumo da api do OpenWeather');
     }
 

@@ -10,4 +10,5 @@ export class Weather {
   feelsLike: number;
   humidity: number;
   clouds: number;
+  windSpeed: number;
 }
